@@ -1,0 +1,196 @@
+{
+	"info": {
+		"_postman_id": "1c875296-bb17-4181-9838-f7d404dd247a",
+		"name": "ChaosMonkey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "chaosmonkey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/status",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/enable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/enable",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/enable",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/disable",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/watchers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/watchers",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"watchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/watchers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"level\": 3,\r\n    \"latencyRangeStart\": 1000,\r\n    \"latencyRangeEnd\": 3000,\r\n    \"latencyActive\": true,\r\n    \"exceptionsActive\": false,\r\n    \"killApplicationActive\": false,\r\n    \"memoryActive\": false,\r\n    \"memoryMillisecondsHoldFilledMemory\": 90000,\r\n    \"memoryMillisecondsWaitNextIncrease\": 1000,\r\n    \"memoryFillIncrementFraction\": 0.15,\r\n    \"memoryFillTargetFraction\": 0.25,\r\n    \"runtimeAssaultCronExpression\": \"OFF\",\r\n    \"watchedCustomServices\": null\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/watchers",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"watchers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/assaults",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/assaults",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"assaults"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "chaosmonkey/assaults",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"level\": 1,\r\n    \"latencyRangeStart\": 10000,\r\n    \"latencyRangeEnd\": 15000,\r\n    \"latencyActive\": false,\r\n    \"exceptionsActive\": false,\r\n    \"killApplicationActive\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{chaoshost}}/chaosmonkey/assaults",
+					"host": [
+						"{{chaoshost}}"
+					],
+					"path": [
+						"chaosmonkey",
+						"assaults"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "chaoshost",
+			"value": "localhost:9090/actuator"
+		}
+	]
+}
